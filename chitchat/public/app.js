@@ -266,7 +266,7 @@
   function fillRow(row, msg) {
     const bubble = $('.cc-bubble', row);
     if (msg.role === 'user') bubble.textContent = msg.text;
-    else bubble.innerHTML = markdown(msg.text) + sourcesHtml(msg.sources);
+    else bubble.innerHTML = markdown(msg.text); // sources list hidden from visitors (still logged in data/chat-log.jsonl)
     const meta = $('.cc-meta', row);
     meta.innerHTML = `<span>${fmtTime(msg.time)}</span>`;
     if (msg.role === 'bot' && !msg.error && msg.text) {
